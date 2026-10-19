@@ -1,0 +1,27 @@
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    width: 1090px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-blog {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 780px;
+}
+
+.footer-item {
+    width: 165px;
+    text-align: center;
+}

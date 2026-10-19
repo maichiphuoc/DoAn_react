@@ -1,0 +1,167 @@
+/* ===== Section nền ===== */
+#form {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf3 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== Card form ===== */
+.login-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px 35px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.login-form:hover {
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Tiêu đề ===== */
+.login-form h2 {
+  color: #2c3e50;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 30px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.login-form h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  border-radius: 2px;
+}
+
+/* ===== Input ===== */
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  height: 46px;
+  padding: 0 15px;
+  margin-bottom: 18px;
+  border: 1.5px solid #e0e4ea;
+  border-radius: 8px;
+  background: #f8f9fb;
+  font-size: 15px;
+  color: #2c3e50;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+
+.login-form input::placeholder {
+  color: #a0a8b4;
+}
+
+.login-form input:focus {
+  border-color: #3498db;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.12);
+}
+
+/* ===== Checkbox ===== */
+.login-form .checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0 10px;
+}
+
+.login-form .checkbox-wrapper input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #3498db;
+  cursor: pointer;
+}
+
+.login-form .checkbox-wrapper label {
+  font-size: 14px;
+  color: #7f8c9b;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ===== Nút Login (chính) ===== */
+.login-form button[type="submit"] {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.25s ease;
+}
+
+.login-form button[type="submit"]:hover {
+  background: linear-gradient(135deg, #2980b9, #1f6391);
+  box-shadow: 0 6px 20px rgba(41, 128, 185, 0.35);
+  transform: translateY(-1px);
+}
+
+.login-form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* ===== Text phân cách + nút Signup (phụ) ===== */
+.login-form .switch-text {
+  text-align: center;
+  margin: 18px 0 10px;
+  color: #a0a8b4;
+  font-size: 14px;
+}
+
+.login-form .btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  border: 1.5px solid #3498db;
+  border-radius: 8px;
+  background: transparent;
+  color: #2980b9;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+
+.login-form .btn-secondary:hover {
+  background: rgba(52, 152, 219, 0.08);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+  transform: translateY(-1px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 767px) {
+  #form {
+    padding: 40px 0;
+  }
+
+  .login-form {
+    padding: 30px 22px;
+  }
+
+  .login-form h2 {
+    font-size: 22px;
+  }
+}

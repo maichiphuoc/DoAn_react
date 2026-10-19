@@ -1,0 +1,337 @@
+/* =========================
+   RESET (Chỉ cần đặt ở file index.css hoặc App.css toàn cục, không cần lặp lại)
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #666;
+    background: #fff;
+}
+
+a {
+    color: inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.header-container {
+    width: 1090px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 200px;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.logo-text {
+    font-size: 24px;
+    color: #999;
+    font-weight: 300;
+    margin-left: 7px;
+}
+
+.menu {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #666;
+
+    display: flex;
+    align-items: center;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    color: #f0a830;
+}
+
+.menu .icon {
+    margin-right: 5px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #eee;
+}
+
+.navbar-container {
+    width: 1090px;
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu > li > a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #666;
+    padding: 8px 0;
+    display: block;
+    transition: 0.2s;
+}
+
+.nav-menu > li > a:hover,
+.nav-menu > li > a.active {
+    color: #f0a830;
+}
+
+.caret {
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: #fff;
+    min-width: 160px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+
+    border: 1px solid #eee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+    color: #f0a830;
+    background: #f8f8f8;
+}
+
+/* Search box */
+.search-form {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.search-form .search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-form .search-box input {
+    width: 170px;
+    height: 35px;
+    padding: 0 12px;
+
+    border: none;
+    background: #f0f0e9;
+    font-size: 14px;
+    color: #666;
+
+    outline: none;
+}
+
+.search-form .search-box input::placeholder {
+    color: #999;
+}
+
+.search-form .search-box button {
+    width: 40px;
+    height: 35px;
+
+    border: none;
+    background: #f0f0e9;
+    cursor: pointer;
+    font-size: 14px;
+    color: #999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-form .search-box button:hover {
+    background: #e6e6dc;
+}
+
+/* =========================
+   FEATURES (Thanh lọc sản phẩm)
+========================= */
+
+.features {
+    width: 1090px;
+    margin: 0 auto;
+    padding-left: 292px;   /* 262 (menuLeft) + 30 (padding content) */
+    box-sizing: border-box;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    color: #f0a830;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 15px 0 20px;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+/* Thanh lọc */
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-input,
+.filter-select {
+    height: 35px;
+    padding: 0 12px;
+
+    border: none;
+    background: #f0f0e9;
+    font-size: 14px;
+    color: #666;
+
+    outline: none;
+}
+
+.filter-input {
+    flex: 1;
+    min-width: 120px;
+}
+
+.filter-input::placeholder {
+    color: #999;
+}
+
+.filter-select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    padding-right: 30px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%23999'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer;
+}
+
+.filter-btn {
+    height: 35px;
+    padding: 0 25px;
+
+    border: none;
+    background: #f0a830;
+    color: #fff;
+    font-size: 14px;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-btn:hover {
+    background: #e89a20;
+}
+.logout-btn {
+    background: transparent;
+    border: none;
+    color: #696763;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 400;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.logout-btn:hover {
+    color: #fe980f;
+}
+
+.logout-btn .icon {
+    font-size: 16px;
+}
