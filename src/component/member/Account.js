@@ -5,7 +5,6 @@ function Account() {
     const navigate = useNavigate();
     const auth = JSON.parse(localStorage.getItem('auth')|| null)
     const token = localStorage.getItem('token')
-    const [avatarPreview, setAvatarPreview] = useState("");
 
     const [inputs, setInputs] = useState({
         name :auth?.name || "",

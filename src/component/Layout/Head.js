@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import { AppContext } from '../Context/AppContext';
 
 function Head() {
-    const cart_count = 0; 
-    const user = null;
-
+    const cart = useContext(AppContext)
+    console.log("check app context :",cart)
     const [token, setToken] = useState(null);
     const navigate = useNavigate();
 
@@ -27,20 +27,19 @@ function Head() {
           </a>
         </div>
         <div className="menu">
-          <a href="#">
+          <Link to="/product/wishlist">
             <span className="icon">★</span>
             Wishlist
-          </a>
-          <a href="/checkout">
+          </Link>
+          <Link to="/product/cart/checkout">
             <span className="icon">✥</span>
             Checkout
-          </a>
-          <a href="/cart">
+          </Link>
+          <Link to="/product/cart">
             <span className="icon">🛒</span>
             Cart
-            {/* Hiển thị biến đúng cách */}
-            (<span id="cart-count">{cart_count}</span>)
-          </a>
+            (<span id="cart-count">{cart}</span>)
+          </Link>
           {token ? (
             <>
               <Link to ="/account">
@@ -76,21 +75,21 @@ function Head() {
           <ul className="nav-menu">
             <li><Link to="/" className="active">Home</Link></li>
             <li className="dropdown">
-              <a href="#">Shop <span className="caret">▾</span></a>
+              <Link to href="#">Shop <span className="caret">▾</span></Link>
               <ul className="dropdown-menu">
-                <li><a href="#">Sản phẩm</a></li>
-                <li><a href="#">Danh mục</a></li>
+                <li><Link to href="#">Sản phẩm</Link></li>
+                <li><Link to href="#">Danh mục</Link></li>
               </ul>
             </li>
             <li className="dropdown">
               <Link to="/blog/list">Blog <span className="caret">▾</span></Link>
               <ul className="dropdown-menu">
                 <Link to="/blog/list">Blog list</Link>
-                <li><a href="#">Blog single</a></li>
+                <li><Link to href="#">Blog single</Link></li>
               </ul>
             </li>
-            <li><a href="#">404</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><Link to href="#">404</Link></li>
+            <li><Link to href="#">Contact</Link></li>
           </ul>
           <form className="search-form" method="GET" action="/search">
             <div className="search-box">

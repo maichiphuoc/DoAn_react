@@ -1,0 +1,159 @@
+/* Trang xác nhận xóa */
+.delete-product-page {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #f8fafc;
+}
+
+/* Card chính */
+.delete-product-card {
+    width: 100%;
+    max-width: 480px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.07);
+    border: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+/* Icon xóa */
+.delete-product-icon {
+    width: 76px;
+    height: 76px;
+    background: #fee2e2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    margin: 0 auto 24px;
+}
+
+/* Tiêu đề */
+.delete-product-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+/* Mô tả */
+.delete-product-description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+/* Thông tin ID */
+.delete-product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 15px 18px;
+    margin-bottom: 20px;
+}
+
+.delete-product-info span {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.delete-product-info strong {
+    font-size: 16px;
+    color: #111827;
+}
+
+/* Cảnh báo */
+.delete-product-warning {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    text-align: left;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 28px;
+}
+
+.delete-product-warning span {
+    font-size: 18px;
+}
+
+.delete-product-warning p {
+    font-size: 13px;
+    color: #9a3412;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Nhóm nút */
+.delete-product-form {
+    display: flex;
+    gap: 14px;
+}
+
+.delete-product-form button {
+    flex: 1;
+    padding: 13px 16px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Nút quay lại */
+.delete-product-cancel {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #374151;
+}
+
+.delete-product-cancel:hover {
+    background: #f3f4f6;
+}
+
+/* Nút xóa */
+.delete-product-confirm {
+    background: #dc2626;
+    border: 1px solid #dc2626;
+    color: white;
+}
+
+.delete-product-confirm:hover {
+    background: #b91c1c;
+    border-color: #b91c1c;
+}
+
+.delete-product-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .delete-product-card {
+        padding: 30px 20px;
+    }
+
+    .delete-product-title {
+        font-size: 21px;
+    }
+
+    .delete-product-form {
+        flex-direction: column-reverse;
+    }
+
+    .delete-product-form button {
+        width: 100%;
+    }
+}

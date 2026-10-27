@@ -1,0 +1,90 @@
+
+.add-product {
+  width: 100%;
+  padding: 0 12px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.add-product h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #696763;
+  margin: 10px 0 16px;
+}
+
+.add-product form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-product input,
+.add-product select,
+.add-product textarea {
+  width: 100%;
+  background-color: #f0f0e9;
+  border: none;
+  border-radius: 0;
+  padding: 8px;
+  font-size: 12px;
+  color: #696763;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.add-product input,
+.add-product select {
+  height: 30px;
+}
+
+.add-product input::placeholder,
+.add-product textarea::placeholder {
+  color: #999;
+}
+
+.add-product select {
+  cursor: pointer;
+}
+
+.add-product-sale {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.add-product-sale input {
+  width: 115px;
+}
+
+.add-product-sale span {
+  font-size: 12px;
+  color: #696763;
+}
+
+.add-product input[type="file"] {
+  padding: 5px 7px;
+  cursor: pointer;
+}
+
+.add-product textarea {
+  height: 105px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.add-product button {
+  width: 65px;
+  height: 25px;
+  padding: 0;
+  background-color: #fe980f;
+  border: none;
+  border-radius: 0;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.add-product button:hover {
+  background-color: #e8890b;
+}
