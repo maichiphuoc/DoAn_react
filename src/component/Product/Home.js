@@ -67,6 +67,7 @@ function Home() {
         wishList[product.id] = 1
         
         localStorage.setItem('wishList',JSON.stringify(wishList));
+        window.dispatchEvent(new Event("wishListUpdated"));
         console.log(wishList)
     }
   return (

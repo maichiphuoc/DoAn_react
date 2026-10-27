@@ -6,6 +6,7 @@ function Wishlist() {
     const [wishList, setWishList] = useState(() => {
     return JSON.parse(localStorage.getItem("wishList") || "{}");
 });
+    console.log("kiểu dữ liệu", wishList)
     //lấy danh sách sản phẩm rồi lọc theo wishlist
     useEffect(()=>{
         let cancelled = false
@@ -38,7 +39,7 @@ function Wishlist() {
     },[wishList])
     //thêm sản phẩm vào wishlist
     function handleAddToWishList(product){
-        const cart = JSON.parse(localStorage.getItem()||"{}")
+        const cart = JSON.parse(localStorage.getItem('cart')||"{}")
         if(cart[product.id]){
             cart[product.id] += 1
         }
@@ -46,6 +47,7 @@ function Wishlist() {
             cart[product.id] = 1
         }
         localStorage.setItem('cart',JSON.stringify(cart))
+        window.dispatchEvent(new Event("wishListUpdated"));
         console.log("Cart:", cart);
     }
     //Xóa sản phẩm khỏi wishlist
@@ -56,6 +58,7 @@ function Wishlist() {
         delete newWishList[id];
 
         localStorage.setItem('wishList',JSON.stringify(newWishList))
+        window.dispatchEvent(new Event("wishListUpdated"));
 
         setWishList(newWishList)
 

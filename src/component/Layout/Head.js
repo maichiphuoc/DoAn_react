@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../Context/AppContext';
 
 function Head() {
-    const cart = useContext(AppContext)
+    const {cart, cartWishlist} = useContext(AppContext)
     console.log("check app context :",cart)
     const [token, setToken] = useState(null);
     const navigate = useNavigate();
@@ -30,6 +30,7 @@ function Head() {
           <Link to="/product/wishlist">
             <span className="icon">★</span>
             Wishlist
+            (<span id="cart-count">{cartWishlist}</span>)
           </Link>
           <Link to="/product/cart/checkout">
             <span className="icon">✥</span>
