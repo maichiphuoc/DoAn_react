@@ -1,10 +1,13 @@
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { updateCartCount } from '../../Redux/cartSlice';
 
 function Cart() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -126,27 +129,37 @@ function Cart() {
         console.log("giỏ hàng mới sau khi lưu vào local :",cartData)
         // Báo cho AppContext cập nhật số lượng
         window.dispatchEvent(new Event("cartUpdated"));
+
+        //Dispatch redux cập nhật số lượng
+        const total = Object.values(cartData).reduce(
+            (sum, quantity) => sum + Number(quantity ||0),
+            0
+        )
+        //Gọi action creator và gửi action đến store
+        dispatch(updateCartCount(total))
+        //check
+        console.log("Check redux: ",updateCartCount(total))
     }
-    function handleQuantity(productId, change){
-        setProducts(previousProduct =>{
-            const updatedProducts = previousProduct.map(product =>{
-                if(String(product.id)!==String(productId)){
-                    return product
-                }
-                console.log(product)
-                const newQuantity = Math.min(
-                    99,
-                    Math.max(1, product.quantity + change)
-                )
-                return {
-                    ...product,
-                    quantity:newQuantity
-                }
-            });
-            savedCart(updatedProducts)
-            console.log("Giỏ hàng sau khi thêm bớt: ",updatedProducts)
-            return updatedProducts
-        })
+    function handleQuantity(productId, change) {
+        const updatedProducts = products.map(product => {
+            if (String(product.id) !== String(productId)) {
+                return product;
+            }
+
+            const newQuantity = Math.min(
+                99,
+                Math.max(1, product.quantity + change)
+            );
+
+            return {
+                ...product,
+                quantity: newQuantity
+            };
+        });
+
+        setProducts(updatedProducts);
+        console.log("Giỏ hàng sau khi thêm bớt: ",updatedProducts)
+        savedCart(updatedProducts);
     }
     //Xóa sản phẩm khỏi giỏ
     function handleRemove(productId){

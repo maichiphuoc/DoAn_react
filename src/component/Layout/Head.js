@@ -1,10 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../Context/AppContext';
+import { useSelector } from 'react-redux';
 
 function Head() {
     const {cart, cartWishlist} = useContext(AppContext)
     console.log("check app context :",cart)
+    const cartCount = useSelector(
+      (state) => state.cart.cartCount
+    )
     const [token, setToken] = useState(null);
     const navigate = useNavigate();
 
@@ -22,9 +26,9 @@ function Head() {
       <div className="header-container">
         <div className="logo">
           
-          <a href="/">
+          <Link to="/">
             <span className="logo-text">E-Shopper</span>
-          </a>
+          </Link>
         </div>
         <div className="menu">
           <Link to="/product/wishlist">
@@ -35,6 +39,7 @@ function Head() {
           <Link to="/product/cart/checkout">
             <span className="icon">✥</span>
             Checkout
+            (<span id="checkout-count">{cartCount}</span>)
           </Link>
           <Link to="/product/cart">
             <span className="icon">🛒</span>

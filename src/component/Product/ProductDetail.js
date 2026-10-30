@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Carousel from "react-multi-carousel";
 import { createPortal } from "react-dom";
-
+import { useDispatch } from 'react-redux';
+import { updateCartCount } from '../../Redux/cartSlice';
 
 function ProductDetail() {
     const param = useParams();
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const [data, setData] = useState(null);
     const [loadingProduct, setLoadingProduct] = useState(true);
@@ -230,6 +232,16 @@ function ProductDetail() {
         localStorage.setItem("cart", JSON.stringify(cart));
         // Báo cho AppContext cập nhật số lượng trên Head
         window.dispatchEvent(new Event("cartUpdated"));
+
+        //redux toolkit
+        const total = Object.values(cart).reduce(
+            (sum, quantity) => sum + Number(quantity || 0),
+            0
+        )
+        console.log("Tổng redux:",total)
+        //Gọi action creator và gửi action đến store
+        dispatch(updateCartCount(total))
+        console.log("Tổng redux sau:",updateCartCount(total))
         console.log("Giỏ hàng", cart)
 
         alert("Đã thêm sản phẩm vào giỏ")
