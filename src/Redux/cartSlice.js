@@ -15,17 +15,22 @@ function getCartCount(){
         return 0;
     }
 }
+// initialState được dùng khi mà redux store khởi tạo
+// không chạy lạy mỗi lần dispatch()
 const initialState = {
     cartCount : getCartCount()
 };
 const cartSlice = createSlice({
     //hiển thị ở dispatch type : name + '/' + tênReducer
     name : 'cart',
-    //giá trị ban đầu khi redux store được khởi tạo, dùng để hiển thị trước khi mà cập nhật số lượng sản phẩm
+    //Gán State ban đầu cho slice
+    //Redux store sử dụng state này khi khởi tạo
     initialState,
 
+    //reducers: Khai báo những hàm có nhiệm vụ thay đổi State.
     reducers: {
         //cập nhật tổng số lượng sp
+        //updateCartCount là tên Reducer
         updateCartCount: (state, action) =>{
             state.cartCount = Number(action.payload) || 0;
         },
